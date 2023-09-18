@@ -34,12 +34,21 @@ dependencies {
             'org.junit.jupiter:junit-jupiter:5.9.3',
             'io.qameta.allure:allure-selenide:2.23.0',
             'com.codeborne:selenide:6.17.1',
-            'org.seleniumhq.selenium:selenium-java:4.12.1'
     )
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.9.3')
 }
-
 
 test {
     useJUnitPlatform()
+}
+
+task basket_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("basket")
+    }
+}
+
+task catalog_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("catalog")
+    }
 }

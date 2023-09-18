@@ -1,47 +1,67 @@
 package guru.qa.pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.impl.SelenideElementDescriber;
 import guru.qa.utils.Variables;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class SectionPage {
 
-    Variables variables = new Variables();
-    public String itemPrice;
+    public String itemLink;
     public String itemName;
+    public String itemPrice;
     public String itemBrand;
+    Variables variables = new Variables();
+    private final SelenideElement
+    sectionTitle = $(".catalog-title"),
+    randomItemCard = $$(".product-card__wrapper").get(variables.itemCardNumber),
+    itemPriceElement = randomItemCard.$(".price__lower-price"),
+    itemNameElement = randomItemCard.$(".product-card__name"),
+    itemBrandElement = randomItemCard.$(".product-card__brand"),
+    itemLinkElement = randomItemCard.$(".product-card__link");
 
-    private SelenideElement
-            sectionTitle = $(".catalog-title"),
-            itemsGallery = $(".goods-slider__header");
 
-    private ElementsCollection
-            itemCards = $$(".product-card__wrapper");
+    @Step("Получаем цену случайного товара")
+    public SectionPage getPriceOfRandomItemCard() {
 
-    public SectionPage getPriceOfRandomItemCard(){
-       SelenideElement itemPriceElement = itemCards.get(1);
-        itemPrice = itemPriceElement.$(".price__lower-price").getText();
-       return this;
-    }
-    public SectionPage getNameOfRandomItemCard(){
-        SelenideElement itemNameElement = itemCards.get(1);
-        itemName = itemNameElement.$(".product-card__name").getText();
+        itemPrice = itemPriceElement.getText();
         return this;
     }
-    public SectionPage getBrandOfRandomItemCard(){
-        SelenideElement itemBrandElement = itemCards.get(1);
-        itemBrand = itemBrandElement.$(".product-card__name").getText();
+
+    @Step("Получаем наименование случайного товара")
+    public SectionPage getNameOfRandomItemCard() {
+
+        itemName = itemNameElement.getText().substring(2);
         return this;
     }
-    public void openRandomItemCard(){
-        itemCards.get(1).click();}
 
+    @Step("Получаем производителя случайного товара")
+    public SectionPage getBrandOfRandomItemCard() {
+
+        itemBrand = itemBrandElement.getText();
+        return this;
+    }
+
+    @Step("Получаем ссылку на случайный товар")
+    public SectionPage getItemLink() {
+
+        itemLink = itemLinkElement.getAttribute("href");
+        return this;
+    }
+
+    @Step("Открываем случайный товар")
+    public ItemPage openRandomItemCard() {
+
+        randomItemCard.click();
+        return new ItemPage(itemPrice, itemBrand, itemName, itemLink);
+    }
+
+    @Step("Проверяем название секции")
     public void checkSectionName(String sectionName) {
+
         sectionTitle.shouldHave(Condition.text(sectionName));
     }
-        }
+}

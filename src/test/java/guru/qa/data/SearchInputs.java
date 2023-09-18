@@ -1,10 +1,7 @@
 package guru.qa.data;
 
-import guru.qa.pages.SearchResultPage;
-
-import java.util.Random;
-
 public enum SearchInputs {
+
     JEANS("Джинсы"),
     SCALES("Весы"),
     SHOVEL("Лопата"),
@@ -27,12 +24,13 @@ public enum SearchInputs {
     BOAT("Надувная лодка");
 
     private final String name;
-
     SearchInputs(String name) {
+
         this.name = name;
     }
 
     public String getName() {
+
         return name;
     }
 

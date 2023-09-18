@@ -10,7 +10,6 @@ public enum Sections {
     ACCESSORIES("Аксессуары"),
     ELECTRONICS("Электроника"),
     TOYS("Игрушки"),
-    FURNITURE("Мебель"),
     FOOD("Продукты"),
     TECHNIC("Бытовая техника"),
     ZOO("Зоотовары"),
@@ -18,14 +17,19 @@ public enum Sections {
     AUTO("Автотовары"),
     SCHOOL("Школа"),
     BOOKS("Книги"),
-    JEWELLERY("Ювелирные изделия");
+    REPARATION("Для ремонта"),
+    HEALTH("Здоровье"),
+    STATIONERY("Канцтовары");
+
     private final String name;
 
     Sections(String name) {
+
         this.name = name;
     }
 
     public String getName() {
+
         return name;
     }
 }
