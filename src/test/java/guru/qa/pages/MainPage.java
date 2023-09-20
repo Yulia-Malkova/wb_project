@@ -37,6 +37,7 @@ public class MainPage {
     @Step("Кликаем на строку поиска")
     public MainPage clickSearchBar() {
 
+        waitUntilCurrencyDropdownLoads();
         searchBar.click();
         return this;
     }
