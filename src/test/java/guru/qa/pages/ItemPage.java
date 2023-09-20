@@ -33,6 +33,9 @@ public class ItemPage {
         this.itemLink = itemLink;
     }
 
+    public ItemPage() {
+    }
+
     @Step("Проверяем, что на странице товара отображаются верные наименование, производитель и цена")
     public void checkInformationOnItemPage() {
 

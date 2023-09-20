@@ -27,6 +27,8 @@ public class BasketPage {
         this.itemBrand = itemBrand;
         this.itemName = itemName;
     }
+    public BasketPage() {
+        }
 
     @Step("Проверяем наименование, производителя и стоимость добавленного в корзину товара")
     public void checkBasketPage() {
