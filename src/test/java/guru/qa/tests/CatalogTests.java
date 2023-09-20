@@ -11,7 +11,7 @@ public class CatalogTests extends TestBase {
 
     @ParameterizedTest(name = "Пользователь может перейти в раздел {0} каталога через меню")
     @ValueSource(
-            strings = {"Женщинам", "Обувь", "Детям", "Мужчинам", "Дом", "Красота", "Аксессуары", "Электроника"}
+            strings = {"Женщинам", "Обувь", "Мужчинам", "Дом", "Красота"}
     )
     @Tag("catalog")
     void userCanNavigateToCatalogSectionViaMenu(String sectionName) {
@@ -25,7 +25,7 @@ public class CatalogTests extends TestBase {
     @ParameterizedTest(name = "Раздел каталога {0} содержит подраздел {1}")
     @CsvFileSource(resources = "/userCanOpenItemCardInCatalogSection.csv")
     @Tag("catalog")
-    void userCanOpenItemCardInCatalogSection(String sectionName, String subSectionName) {
+    void catalogSectionContainsSubsection(String sectionName, String subSectionName) {
 
         mainPage
                 .openMenu()

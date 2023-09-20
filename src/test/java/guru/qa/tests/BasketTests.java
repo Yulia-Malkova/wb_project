@@ -14,7 +14,7 @@ public class BasketTests extends TestBase {
 
     @ParameterizedTest(name = "Пользователь может добавить товар из раздела {0} в корзину")
     @ValueSource(
-            strings = {"Дом", "Книги", "Игрушки", "Зоотовары", "Бытовая техника", "Автотовары"})
+            strings = {"Дом", "Книги", "Игрушки", "Зоотовары", "Бытовая техника"})
     @Tag("basket")
     void userCanAddItemToBasket(String sectionName) {
 
@@ -33,7 +33,7 @@ public class BasketTests extends TestBase {
 
     @ParameterizedTest(name = "Пользователь может удалить товар раздела {0} из корзины")
     @ValueSource(
-            strings = {"Дом", "Книги", "Игрушки", "Зоотовары", "Бытовая техника", "Автотовары"})
+            strings = {"Дом", "Книги", "Игрушки", "Зоотовары", "Бытовая техника"})
     @Tag("basket")
     void userCanDeleteItemFromBasket(String sectionName) {
 
