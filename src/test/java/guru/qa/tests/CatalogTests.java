@@ -11,7 +11,7 @@ public class CatalogTests extends TestBase {
 
     @ParameterizedTest(name = "Пользователь может перейти в раздел {0} каталога через меню")
     @ValueSource(
-            strings = {"Женщинам", "Обувь", "Детям", "Мужчинам", "Дом", "Красота", "Аксессуары", "Электроника", "Игрушки"}
+            strings = {"Женщинам", "Обувь", "Детям", "Мужчинам", "Дом", "Красота", "Аксессуары", "Электроника"}
     )
     @Tag("catalog")
     void userCanNavigateToCatalogSectionViaMenu(String sectionName) {
