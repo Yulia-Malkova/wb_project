@@ -76,7 +76,52 @@ ${TEST_JOB}
 * <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По умолчанию - <code>100.0</code>.
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию - <code>1920x1080</code>.
 * <code>WEB_DRIVER</code> – адрес удаленного сервера, на котором будут запускаться тесты. По умолчанию - <code>https://user1:1234@selenoid.autotests.cloud/</code>.
-## <img src="media/logo/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
+ç Сборка в Jenkins
 <p align="center">
-<img title="Jenkins Build" src="media/screens/JenkinsBuild.png">
+<img title="Jenkins Build" src="src/media/ jenkins.png">
+</p>
+
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Пример Allure-отчета
+### Overview
+
+<p align="center">
+<img title="Allure Overview" src="src/media/allure-overview.png">
+</p>
+### Результат выполнения теста
+
+<p align="center">
+<img title="Test Results in Alure" src="src/media/allure_test_result.png">
+</p>
+
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Интеграция с Allure TestOps
+
+Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>.
+Результат выполнения автотестов отображается в <code>Allure TestOps</code>
+На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
+
+<p align="center">
+<img title="Allure TestOps DashBoard" src="src/media/allure_test_ops.png">
+</p>
+
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Интеграция с Jira
+
+Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается информация, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
+
+<p align="center">
+<img title="Jira Task" src="src/media/jira_integration.png">
+</p>
+
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Уведомления в Telegram с использованием бота
+
+После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом.
+
+<p align="center">
+<img width="70%" title="Telegram Notifications" src="src/media/telegram_bot.png">
+</p>
+
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Видео примера запуска тестов в Selenoid
+
+К каждому тесту в отчете прилагается видео прогона.
+<p align="center">
+  <img title="Selenoid Video" src="src/media/video_test.gif">
 </p>
