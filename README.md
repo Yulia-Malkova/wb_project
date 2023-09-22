@@ -3,7 +3,7 @@
 <p align="center">
 
 # <p align="center"> Проект по автоматизации тестовых сценариев для  Wildberries <p align="center">
-## :pushpin: Содержание:
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Содержание:
 
 - [Использованный стек технологий](#computer-использованный-стек-технологий)
 - [Запуск тестов из терминала](#arrow_forward-запуск-тестов-из-терминала)
@@ -12,7 +12,7 @@
 - [Уведомления в Telegram с использованием бота](#уведомления-в-telegram-с-использованием-бота)
 - [Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-теста-в-selenoid)
 
-## :computer: Использованный стек технологий
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Использованный стек технологий
 <p align="center">
 <img width="6%" title="IntelliJ IDEA" src="src/media/Intelij_IDEA.svg">
 <img width="6%" title="Java" src="src/media/Java.svg">
@@ -42,11 +42,41 @@
 * Логи браузерной консоли;
 * Видео выполнения автотеста.
 
-## :arrow_forward: Запуск автотестов
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Запуск автотестов
 
 ### Запуск тестов из терминала
+Для запуска можно выбрать один из трех тест-сьютов:
+
+```mermaid
+flowchart LR
+node1([Test Suites]) --> node2([Запуск всех тестов]) --> node3([test])
+node1([Test Suites]) --> node4([Запуск тестов, связанных с корзиной]) --> node5([basket])
+node1([Test Suites]) --> node6([Запуск тестов, связанных с каталогом]) --> node7([catalog])
 ```
+Команда для запуска тестов из терминала:
+```
+gradle clean ${TEST_JOB}
+```
+При необходимости также можно переопределить параметры запуска
 
 ```
-При выполнении команды, данные тесты запустятся удаленно в <code>Selenoid</code>.
+gradle clean
+${TEST_JOB}
+-Dbrowser=${BROWSER}
+-Dversion=${BROWSER_VERSION}
+ -DbrowserSize=${BROWSER_SIZE}
+ -DwebDriver=${WEB_DRIVER}
+```
+При выполнении команды, тесты запустятся удаленно в <code>Selenoid</code>.
 
+### Параметры сборки
+
+* <code>TEST_JOB</code> – тестовый сьют.
+* <code>BROWSER_NAME</code> – браузер, в котором будут выполняться тесты. По умолчанию - <code>chrome</code>.
+* <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По умолчанию - <code>100.0</code>.
+* <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию - <code>1920x1080</code>.
+* <code>WEB_DRIVER</code> – адрес удаленного сервера, на котором будут запускаться тесты. По умолчанию - <code>https://user1:1234@selenoid.autotests.cloud/</code>.
+## <img src="media/logo/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
+<p align="center">
+<img title="Jenkins Build" src="media/screens/JenkinsBuild.png">
+</p>
