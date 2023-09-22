@@ -25,7 +25,8 @@ public class MainPage {
             supportChatWindow = $(".chat__content-wrap"),
             supportDialogueName = $(".chat__text"),
             supportChatBody = $(".chat__message-none"),
-            supportChatInput = $(".chat__inputs-wrap");
+            supportChatInput = $(".chat__inputs-wrap"),
+            paginationButton = $(".j-main-banners-pagination");
 
 
     private ElementsCollection
@@ -37,7 +38,7 @@ public class MainPage {
     @Step("Кликаем на строку поиска")
     public MainPage clickSearchBar() {
 
-        waitUntilCurrencyDropdownLoads();
+        waitTillItemCardsLoad();
         searchBar.click();
         return this;
     }
@@ -47,6 +48,12 @@ public class MainPage {
 
         searchBar.setValue(searchInput).pressEnter();
         return new SearchResultPage();
+    }
+    @Step("Проверяем, что карточки товаров загрузились")
+    public MainPage waitTillItemCardsLoad(){
+
+        paginationButton.should(Condition.appear, Duration.ofSeconds(10));
+        return this;
     }
 
     @Step("Открываем чат поддержки")
@@ -69,7 +76,7 @@ public class MainPage {
     @Step("Открываем меню")
     public MainPage openMenu() {
 
-        waitUntilCurrencyDropdownLoads();
+        waitTillItemCardsLoad();
         menuButton.click();
         return this;
     }
