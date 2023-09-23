@@ -68,7 +68,7 @@ ${TEST_JOB}
 * <code>BROWSER_NAME</code> – браузер, в котором будут выполняться тесты. По умолчанию - <code>chrome</code>.
 * <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По умолчанию - <code>100.0</code>.
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию - <code>1920x1080</code>.
-* <code>WEB_DRIVER</code> – адрес удаленного сервера, на котором будут запускаться тесты. По умолчанию - <code>https://user1:1234@selenoid.autotests.cloud/</code>.
+* <code>WEB_DRIVER</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 ç Сборка в Jenkins
 <p align="center">
 <img title="Jenkins Build" src="src/media/ jenkins.png">
