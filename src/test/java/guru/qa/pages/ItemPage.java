@@ -21,7 +21,7 @@ public class ItemPage {
             priceBlock = $(".product-page__price-block.product-page__price-block--aside"),
             addToBasketButton = $(".product-page__aside-sticky"),
             goToBasketButton = $(".navbar-pc__icon--basket"),
-            priceHistoryInfo = $(".price-history__btn");
+            deliveryInformationInfo = $(".delivery__store");
 
     @Step("Проверяем, что на странице товара отображаются верные наименование, производитель и цена")
     public void checkInformationOnItemPage(DataExtractor dataExtractor) {
@@ -34,7 +34,7 @@ public class ItemPage {
 
     @Step("Добавляем товар в корзину")
     public ItemPage addItemToBasket() {
-        waitTillPriceHistoryLoads();
+        waitTillInformationAboutDeliveryLoads();
         addToBasketButton.$(byText("Добавить в корзину")).click();
         return this;
     }
@@ -44,10 +44,9 @@ public class ItemPage {
 
         goToBasketButton.click();
     }
-    @Step("Проверяем, что история цены загрузилась")
-    public ItemPage waitTillPriceHistoryLoads(){
+    @Step("Проверяем, что информация о доставке загрузилась")
+    public void waitTillInformationAboutDeliveryLoads() {
 
-    priceHistoryInfo.should(Condition.appear, Duration.ofSeconds(10));
-    return this;
+        deliveryInformationInfo.should(Condition.appear, Duration.ofSeconds(10));
     }
 }
