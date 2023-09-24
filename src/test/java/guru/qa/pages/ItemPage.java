@@ -21,7 +21,7 @@ public class ItemPage {
             priceBlock = $(".product-page__price-block.product-page__price-block--aside"),
             addToBasketButton = $(".product-page__aside-sticky"),
             goToBasketButton = $(".navbar-pc__icon--basket"),
-            deliveryInformationInfo = $(".delivery__store");
+            deliveryInformationInfo = $(".product-page__aside-sticky").$(".delivery__store");
 
     @Step("Проверяем, что на странице товара отображаются верные наименование, производитель и цена")
     public void checkInformationOnItemPage(DataExtractor dataExtractor) {

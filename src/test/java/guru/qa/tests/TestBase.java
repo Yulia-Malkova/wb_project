@@ -25,7 +25,7 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.browserVersion = System.getProperty("version", "100.0");
-        String webDriver = System.getProperty("webDriver","");
+        String webDriver = System.getProperty("webDriver","https://user1:1234@selenoid.autotests.cloud/");
         Configuration.remote = format("%swd/hub",webDriver);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
