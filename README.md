@@ -24,8 +24,8 @@
 - В качестве сборщика был использован - <code>Gradle</code>.
 - Использованы фреймворки <code>JUnit 5</code> и [Selenide](https://selenide.org/).
 - При прогоне тестов браузер запускается в [Selenoid](https://aerokube.com/selenoid/).
-- Для удаленного запуска реализована джоба в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов в <code>Telegram</code> при помощи бота.
-- Осуществлена интеграция с <code>Allure TestOps</code> и <code>Jira</code>
+- Для удаленного запуска реализована джоба в [Jenkins](https://jenkins.autotests.cloud/job/021-Yulia_Malkova-WB_project/) с формированием [Allure-отчета](https://jenkins.autotests.cloud/job/021-Yulia_Malkova-WB_project/13/allure/) и отправкой результатов в <code>Telegram</code> при помощи бота.
+- Осуществлена интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3682/dashboards) и [Jira](https://jira.autotests.cloud/browse/HOMEWORK-893).
 
 Содержание Allure-отчета:
 * Шаги теста;
@@ -68,7 +68,7 @@ ${TEST_JOB}
 * <code>BROWSER_NAME</code> – браузер, в котором будут выполняться тесты. По умолчанию - <code>chrome</code>.
 * <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По умолчанию - <code>100.0</code>.
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию - <code>1920x1080</code>.
-* <code>WEB_DRIVER</code> – адрес удаленного сервера, на котором будут запускаться тесты. По умолчанию - <code>https://user1:1234@selenoid.autotests.cloud/</code>.
+* <code>WEB_DRIVER</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 ç Сборка в Jenkins
 <p align="center">
 <img title="Jenkins Build" src="media/ jenkins.png">
