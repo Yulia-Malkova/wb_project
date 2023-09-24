@@ -1,23 +1,23 @@
 <p align="center">
-<a href="https://www.wildberries.ru/"> <img width=50%" src="src/media/wildberries-logo.png"> </a></h1>
+<a href="https://www.wildberries.ru/"> <img width=50%" src="media/wildberries-logo.png"> </a></h1>
 <p align="center">
 
 # <p align="center"> Проект по автоматизации тестовых сценариев для  Wildberries <p align="center">
 
 ## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Использованный стек технологий
 <p align="center">
-<img width="6%" title="IntelliJ IDEA" src="src/media/Intelij_IDEA.svg">
-<img width="6%" title="Java" src="src/media/Java.svg">
-<img width="6%" title="Selenide" src="src/media/Selenide.svg">
-<img width="6%" title="Selenoid" src="src/media/Selenoid.svg">
-<img width="6%" title="Allure Report" src="src/media/Allure_Report.svg">
-<img width="5%" title="Allure TestOps" src="src/media/AllureTestOps.svg">
-<img width="6%" title="Gradle" src="src/media/Gradle.svg">
-<img width="6%" title="JUnit5" src="src/media/JUnit5.svg">
-<img width="6%" title="GitHub" src="src/media/GitHub.svg">
-<img width="6%" title="Jenkins" src="src/media/Jenkins.svg">
-<img width="6%" title="Telegram" src="src/media/Telegram.svg">
-<img width="5%" title="Jira" src="src/media/Jira.svg">
+<img width="6%" title="IntelliJ IDEA" src="media/Intelij_IDEA.svg">
+<img width="6%" title="Java" src="media/Java.svg">
+<img width="6%" title="Selenide" src="media/Selenide.svg">
+<img width="6%" title="Selenoid" src="media/Selenoid.svg">
+<img width="6%" title="Allure Report" src="media/Allure_Report.svg">
+<img width="5%" title="Allure TestOps" src="media/AllureTestOps.svg">
+<img width="6%" title="Gradle" src="media/Gradle.svg">
+<img width="6%" title="JUnit5" src="media/JUnit5.svg">
+<img width="6%" title="GitHub" src="media/GitHub.svg">
+<img width="6%" title="Jenkins" src="media/Jenkins.svg">
+<img width="6%" title="Telegram" src="media/Telegram.svg">
+<img width="5%" title="Jira" src="media/Jira.svg">
 </p>
 
 - В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка для тестирования Selenide.
@@ -71,19 +71,19 @@ ${TEST_JOB}
 * <code>WEB_DRIVER</code> – адрес удаленного сервера, на котором будут запускаться тесты. По умолчанию - <code>https://user1:1234@selenoid.autotests.cloud/</code>.
 ç Сборка в Jenkins
 <p align="center">
-<img title="Jenkins Build" src="src/media/ jenkins.png">
+<img title="Jenkins Build" src="media/ jenkins.png">
 </p>
 
 ## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Пример Allure-отчета
 ### Overview
 
 <p align="center">
-<img title="Allure Overview" src="src/media/allure-overview.png">
+<img title="Allure Overview" src="media/allure-overview.png">
 </p>
 ### Результат выполнения теста
 
 <p align="center">
-<img title="Test Results in Alure" src="src/media/allure_test_result.png">
+<img title="Test Results in Alure" src="media/allure_test_result.png">
 </p>
 
 ## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Интеграция с Allure TestOps
@@ -93,7 +93,7 @@ ${TEST_JOB}
 На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
 
 <p align="center">
-<img title="Allure TestOps DashBoard" src="src/media/allure_test_ops.png">
+<img title="Allure TestOps DashBoard" src="media/allure_test_ops.png">
 </p>
 
 ## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Интеграция с Jira
@@ -101,7 +101,7 @@ ${TEST_JOB}
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается информация, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
 
 <p align="center">
-<img title="Jira Task" src="src/media/jira_integration.png">
+<img title="Jira Task" src="media/jira_integration.png">
 </p>
 
 ## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Уведомления в Telegram с использованием бота
@@ -109,12 +109,12 @@ ${TEST_JOB}
 После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом.
 
 <p align="center">
-<img width="70%" title="Telegram Notifications" src="src/media/telegram_bot.png">
+<img width="70%" title="Telegram Notifications" src="media/telegram_bot.png">
 </p>
 
 ## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Видео примера запуска тестов в Selenoid
 
 К каждому тесту в отчете прилагается видео прогона.
 <p align="center">
-  <img title="Selenoid Video" src="src/media/video_test.gif">
+  <img title="Selenoid Video" src="media/video_test.gif">
 </p>
