@@ -24,8 +24,8 @@
 - В качестве сборщика был использован - <code>Gradle</code>.
 - Использованы фреймворки <code>JUnit 5</code> и [Selenide](https://selenide.org/).
 - При прогоне тестов браузер запускается в [Selenoid](https://aerokube.com/selenoid/).
-- Для удаленного запуска реализована джоба в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов в <code>Telegram</code> при помощи бота.
-- Осуществлена интеграция с [Allure TestOps](https://allure.autotests.cloud/login/) и [Jira](https://jira.autotests.cloud/login).
+- Для удаленного запуска реализована джоба в [Jenkins](https://jenkins.autotests.cloud/job/021-Yulia_Malkova-WB_project/) с формированием [Allure-отчета](https://jenkins.autotests.cloud/job/021-Yulia_Malkova-WB_project/13/allure/) и отправкой результатов в <code>Telegram</code> при помощи бота.
+- Осуществлена интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3682/dashboards) и [Jira](https://jira.autotests.cloud/browse/HOMEWORK-893).
 
 Содержание Allure-отчета:
 * Шаги теста;
