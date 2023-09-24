@@ -1,6 +1,10 @@
 package guru.qa.tests;
 
+import guru.qa.pages.BasketPage;
+import guru.qa.pages.ItemPage;
 import guru.qa.pages.MainPage;
+import guru.qa.pages.SectionPage;
+import guru.qa.utils.DataExtractor;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -9,6 +13,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 public class BasketTests extends TestBase {
 
     MainPage mainPage = new MainPage();
+    SectionPage sectionPage = new SectionPage();
+    ItemPage itemPage = new ItemPage();
+    BasketPage basketPage = new BasketPage();
+    DataExtractor dataExtractor = new DataExtractor();
 
 
 
@@ -20,15 +28,18 @@ public class BasketTests extends TestBase {
 
         mainPage
                 .openMenu()
-                .goToSection(sectionName)
-                .getNameOfRandomItemCard()
-                .getBrandOfRandomItemCard()
-                .getPriceOfRandomItemCard()
-                .getItemLink()
-                .openRandomItemCard()
+                .goToSection(sectionName);
+        sectionPage
+                .getNameOfRandomItemCard(dataExtractor)
+                .getBrandOfRandomItemCard(dataExtractor)
+                .getPriceOfRandomItemCard(dataExtractor)
+                .getLinkOfRandomItemCard(dataExtractor)
+                .openRandomItemCard();
+        itemPage
                 .addItemToBasket()
-                .goToBasket()
-                .checkBasketPage();
+                .goToBasket();
+        basketPage
+                .checkBasketPage(dataExtractor);
     }
 
     @ParameterizedTest(name = "Пользователь может удалить товар раздела {0} из корзины")
@@ -39,14 +50,17 @@ public class BasketTests extends TestBase {
 
         mainPage
                 .openMenu()
-                .goToSection(sectionName)
-                .getNameOfRandomItemCard()
-                .getBrandOfRandomItemCard()
-                .getPriceOfRandomItemCard()
-                .getItemLink()
-                .openRandomItemCard()
+                .goToSection(sectionName);
+        sectionPage
+                .getNameOfRandomItemCard(dataExtractor)
+                .getBrandOfRandomItemCard(dataExtractor)
+                .getPriceOfRandomItemCard(dataExtractor)
+                .getLinkOfRandomItemCard(dataExtractor)
+                .openRandomItemCard();
+        itemPage
                 .addItemToBasket()
-                .goToBasket()
+                .goToBasket();
+        basketPage
                 .clickOnItemSection()
                 .deleteItemFromBasket()
                 .checkEmptyBasket();

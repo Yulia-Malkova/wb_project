@@ -2,18 +2,14 @@ package guru.qa.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import guru.qa.utils.DataExtractor;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class BasketPage {
 
-    String itemPrice;
-    String itemBrand;
-    String itemName;
     private SelenideElement
-            basketHeader = $(".basket-section__header").$(byText("Корзина")),
             itemCounter = $(".navbar-pc__notify"),
             itemNameInBasket = $(".good-info__good-name"),
             itemBrandInBasket = $(".good-info__good-brand "),
@@ -22,21 +18,14 @@ public class BasketPage {
             deleteButton = $(".btn__del"),
             emptyBasketMessage = $(".basket-page__basket-empty");
 
-    public BasketPage(String itemPrice, String itemBrand, String itemName) {
-        this.itemPrice = itemPrice;
-        this.itemBrand = itemBrand;
-        this.itemName = itemName;
-    }
-    public BasketPage() {
-        }
 
     @Step("Проверяем наименование, производителя и стоимость добавленного в корзину товара")
-    public void checkBasketPage() {
+    public void checkBasketPage(DataExtractor dataExtractor) {
 
         itemCounter.shouldHave(Condition.text("1"));
-        itemNameInBasket.shouldHave(Condition.text(itemName));
-        itemBrandInBasket.shouldHave(Condition.text(itemBrand));
-        itemPriceInBasket.shouldHave(Condition.text(itemPrice));
+        itemNameInBasket.shouldHave(Condition.text(dataExtractor.getItemName()));
+        itemBrandInBasket.shouldHave(Condition.text(dataExtractor.getItemBrand()));
+        itemPriceInBasket.shouldHave(Condition.text(dataExtractor.getItemPrice()));
     }
 
     @Step("Кликаем на поле с товаром в корзине")

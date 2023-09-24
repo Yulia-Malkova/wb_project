@@ -44,10 +44,9 @@ public class MainPage {
     }
 
     @Step("Добавляем текст в строку поиска")
-    public SearchResultPage fillInSearchInput(String searchInput) {
+    public void fillInSearchInput(String searchInput) {
 
         searchBar.setValue(searchInput).pressEnter();
-        return new SearchResultPage();
     }
     @Step("Проверяем, что карточки товаров загрузились")
     public MainPage waitTillItemCardsLoad(){
@@ -82,28 +81,25 @@ public class MainPage {
     }
 
     @Step("Переходим в секцию")
-    public SectionPage clickOnSection(String value) {
+    public void clickOnSection(String value) {
 
         menuSection.findBy(text(value)).click();
-        return new SectionPage();
     }
 
     @Step("Переходим в секцию")
-    public SectionPage goToFinalSection() {
+    public void goToFinalSection() {
 
         menuSection.findBy(text(variables.randomSection)).hover();
         menuFinalSubsection.get(1).click();
         waitUntilCurrencyDropdownLoads();
-        return new SectionPage();
     }
 
     @Step("Переходим в секцию")
-    public SectionPage goToSection(String sectionName) {
+    public void goToSection(String sectionName) {
 
         menuSection.findBy(text(sectionName)).hover();
         menuFinalSubsection.get(1).click();
         waitUntilCurrencyDropdownLoads();
-        return new SectionPage();
     }
 
     @Step("Проверяем, что дропдаун с валютами загрузился")

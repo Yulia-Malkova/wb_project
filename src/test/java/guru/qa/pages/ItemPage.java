@@ -2,7 +2,10 @@ package guru.qa.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import guru.qa.utils.DataExtractor;
 import io.qameta.allure.Step;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -10,52 +13,41 @@ import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.url;
 
 public class ItemPage {
-    String itemPrice;
-    String itemBrand;
-    String itemName;
-    String itemLink;
-
     private SelenideElement
 
-            currencyDropdown = $(".simple-menu__currency"),
             itemHeader = $(".product-page__header-wrap"),
             nameInfo = $("[data-link='text{:selectedNomenclature^goodsName}']"),
             brandInfo = $("[data-link='text{:selectedNomenclature^brandName}']"),
             priceBlock = $(".product-page__price-block.product-page__price-block--aside"),
-            addToBasketButton = $(".product-page__aside-sticky").$(byText("Добавить в корзину")),
-            goToBasketButton = $(".navbar-pc__icon--basket");
-
-    public ItemPage(String itemPrice, String itemBrand, String itemName, String itemLink) {
-
-        this.itemPrice = itemPrice;
-        this.itemBrand = itemBrand;
-        this.itemName = itemName;
-        this.itemLink = itemLink;
-    }
-
-    public ItemPage() {
-    }
+            addToBasketButton = $(".product-page__aside-sticky"),
+            goToBasketButton = $(".navbar-pc__icon--basket"),
+            priceHistoryInfo = $(".price-history__btn");
 
     @Step("Проверяем, что на странице товара отображаются верные наименование, производитель и цена")
-    public void checkInformationOnItemPage() {
+    public void checkInformationOnItemPage(DataExtractor dataExtractor) {
 
-        webdriver().shouldHave(url(itemLink));
-        nameInfo.shouldHave(Condition.text(itemName));
-        itemHeader.shouldHave(Condition.text(itemBrand));
-        priceBlock.shouldHave(Condition.text(itemPrice));
+        webdriver().shouldHave(url(dataExtractor.getItemLink()));
+        nameInfo.shouldHave(Condition.text(dataExtractor.getItemName()));
+        itemHeader.shouldHave(Condition.text(dataExtractor.getItemBrand()));
+        priceBlock.shouldHave(Condition.text(dataExtractor.getItemPrice()));
     }
 
     @Step("Добавляем товар в корзину")
     public ItemPage addItemToBasket() {
-
-        addToBasketButton.click();
+        waitTillPriceHistoryLoads();
+        addToBasketButton.$(byText("Добавить в корзину")).click();
         return this;
     }
 
     @Step("Открываем корзину")
-    public BasketPage goToBasket() {
+    public void goToBasket() {
 
         goToBasketButton.click();
-        return new BasketPage(itemPrice, itemBrand, itemName);
+    }
+    @Step("Проверяем, что история цены загрузилась")
+    public ItemPage waitTillPriceHistoryLoads(){
+
+    priceHistoryInfo.should(Condition.appear, Duration.ofSeconds(10));
+    return this;
     }
 }

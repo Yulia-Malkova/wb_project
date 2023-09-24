@@ -2,6 +2,7 @@ package guru.qa.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import guru.qa.utils.DataExtractor;
 import guru.qa.utils.Variables;
 import io.qameta.allure.Step;
 
@@ -10,10 +11,6 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class SectionPage {
 
-    public String itemLink;
-    public String itemName;
-    public String itemPrice;
-    public String itemBrand;
     Variables variables = new Variables();
     private final SelenideElement
     sectionTitle = $(".catalog-title"),
@@ -25,38 +22,33 @@ public class SectionPage {
 
 
     @Step("Получаем цену случайного товара")
-    public SectionPage getPriceOfRandomItemCard() {
-
-        itemPrice = itemPriceElement.getText();
+    public SectionPage getPriceOfRandomItemCard(DataExtractor dataExtractor) {
+        dataExtractor.setItemPrice(itemPriceElement.getText());
         return this;
     }
 
     @Step("Получаем наименование случайного товара")
-    public SectionPage getNameOfRandomItemCard() {
-
-        itemName = itemNameElement.getText().substring(2);
+    public SectionPage getNameOfRandomItemCard(DataExtractor dataExtractor) {
+        dataExtractor.setItemName(itemNameElement.getText().substring(2));
         return this;
     }
 
     @Step("Получаем производителя случайного товара")
-    public SectionPage getBrandOfRandomItemCard() {
-
-        itemBrand = itemBrandElement.getText();
+    public SectionPage getBrandOfRandomItemCard(DataExtractor dataExtractor) {
+        dataExtractor.setItemBrand(itemBrandElement.getText());
         return this;
     }
 
     @Step("Получаем ссылку на случайный товар")
-    public SectionPage getItemLink() {
-
-        itemLink = itemLinkElement.getAttribute("href");
+    public SectionPage getLinkOfRandomItemCard(DataExtractor dataExtractor) {
+        dataExtractor.setItemLink(itemLinkElement.getAttribute("href"));
         return this;
     }
 
     @Step("Открываем случайный товар")
-    public ItemPage openRandomItemCard() {
+    public void openRandomItemCard() {
 
         randomItemCard.click();
-        return new ItemPage(itemPrice, itemBrand, itemName, itemLink);
     }
 
     @Step("Проверяем название секции")
