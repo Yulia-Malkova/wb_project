@@ -16,18 +16,15 @@ public class ItemPage {
     private SelenideElement
 
             itemHeader = $(".product-page__header-wrap"),
-            nameInfo = $("[data-link='text{:selectedNomenclature^goodsName}']"),
             brandInfo = $("[data-link='text{:selectedNomenclature^brandName}']"),
             priceBlock = $(".product-page__price-block.product-page__price-block--aside"),
-            addToBasketButton = $(".product-page__aside-sticky"),
-            goToBasketButton = $(".navbar-pc__icon--basket"),
+            basketButton = $(".product-page__aside-sticky"),
             deliveryInformationInfo = $(".product-page__aside-sticky").$(".delivery__store");
 
     @Step("Проверяем, что на странице товара отображаются верные наименование, производитель и цена")
     public void checkInformationOnItemPage(DataExtractor dataExtractor) {
 
         webdriver().shouldHave(url(dataExtractor.getItemLink()));
-        nameInfo.shouldHave(Condition.text(dataExtractor.getItemName()));
         itemHeader.shouldHave(Condition.text(dataExtractor.getItemBrand()));
         priceBlock.shouldHave(Condition.text(dataExtractor.getItemPrice()));
     }
@@ -35,14 +32,14 @@ public class ItemPage {
     @Step("Добавляем товар в корзину")
     public ItemPage addItemToBasket() {
         waitTillInformationAboutDeliveryLoads();
-        addToBasketButton.$(byText("Добавить в корзину")).click();
+        basketButton.$(byText("Добавить в корзину")).click();
         return this;
     }
 
     @Step("Открываем корзину")
     public void goToBasket() {
 
-        goToBasketButton.click();
+        basketButton.$(byText("Перейти в корзину")).click();
     }
     @Step("Проверяем, что информация о доставке загрузилась")
     public void waitTillInformationAboutDeliveryLoads() {

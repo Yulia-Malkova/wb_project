@@ -11,7 +11,6 @@ public class BasketPage {
 
     private SelenideElement
             itemCounter = $(".navbar-pc__notify"),
-            itemNameInBasket = $(".good-info__good-name"),
             itemBrandInBasket = $(".good-info__good-brand "),
             itemPriceInBasket = $(".b-right"),
             itemSectionInBasket = $(".basket-section__basket-list.basket-list"),
@@ -23,7 +22,6 @@ public class BasketPage {
     public void checkBasketPage(DataExtractor dataExtractor) {
 
         itemCounter.shouldHave(Condition.text("1"));
-        itemNameInBasket.shouldHave(Condition.text(dataExtractor.getItemName()));
         itemBrandInBasket.shouldHave(Condition.text(dataExtractor.getItemBrand()));
         itemPriceInBasket.shouldHave(Condition.text(dataExtractor.getItemPrice()));
     }

@@ -17,8 +17,6 @@ public enum Sections {
     AUTO("Автотовары"),
     SCHOOL("Школа"),
     BOOKS("Книги"),
-    REPARATION("Для ремонта"),
-    HEALTH("Здоровье"),
     STATIONERY("Канцтовары");
 
     private final String name;

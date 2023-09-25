@@ -26,6 +26,7 @@ public class MainPage {
             supportDialogueName = $(".chat__text"),
             supportChatBody = $(".chat__message-none"),
             supportChatInput = $(".chat__inputs-wrap"),
+            menuCloseButton = $(".menu-burger__close"),
             paginationButton = $(".j-main-banners-pagination");
 
 
@@ -77,6 +78,7 @@ public class MainPage {
 
         waitTillItemCardsLoad();
         menuButton.click();
+        waitUntilMenuLoads();
         return this;
     }
 
@@ -106,6 +108,13 @@ public class MainPage {
     public MainPage waitUntilCurrencyDropdownLoads() {
 
         currencyDropdown.should(Condition.appear, Duration.ofSeconds(10));
+        return this;
+    }
+
+    @Step("Проверяем, что меню загрузилось")
+    public MainPage waitUntilMenuLoads() {
+
+        menuCloseButton.should(Condition.appear, Duration.ofSeconds(10));
         return this;
     }
 

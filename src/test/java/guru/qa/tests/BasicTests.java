@@ -61,7 +61,6 @@ public class BasicTests extends TestBase {
                 .openMenu()
                 .goToFinalSection();
         sectionPage
-                .getNameOfRandomItemCard(dataExtractor)
                 .getBrandOfRandomItemCard(dataExtractor)
                 .getPriceOfRandomItemCard(dataExtractor)
                 .getLinkOfRandomItemCard(dataExtractor)

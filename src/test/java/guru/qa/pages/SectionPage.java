@@ -6,6 +6,8 @@ import guru.qa.utils.DataExtractor;
 import guru.qa.utils.Variables;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -14,6 +16,7 @@ public class SectionPage {
     Variables variables = new Variables();
     private final SelenideElement
     sectionTitle = $(".catalog-title"),
+    goodsCounter =$(".goods-count"),
     randomItemCard = $$(".product-card__wrapper").get(variables.itemCardNumber),
     itemPriceElement = randomItemCard.$(".price__lower-price"),
     itemNameElement = randomItemCard.$(".product-card__name"),
@@ -27,14 +30,9 @@ public class SectionPage {
         return this;
     }
 
-    @Step("Получаем наименование случайного товара")
-    public SectionPage getNameOfRandomItemCard(DataExtractor dataExtractor) {
-        dataExtractor.setItemName(itemNameElement.getText().substring(2));
-        return this;
-    }
-
     @Step("Получаем производителя случайного товара")
     public SectionPage getBrandOfRandomItemCard(DataExtractor dataExtractor) {
+        waitUntilFilterLoads();
         dataExtractor.setItemBrand(itemBrandElement.getText());
         return this;
     }
@@ -55,5 +53,12 @@ public class SectionPage {
     public void checkSectionName(String sectionName) {
 
         sectionTitle.shouldHave(Condition.text(sectionName));
+    }
+
+    @Step("Проверяем, что карточки товара загрузились")
+    public SectionPage waitUntilFilterLoads() {
+
+        goodsCounter.should(Condition.appear, Duration.ofSeconds(10));
+        return this;
     }
 }

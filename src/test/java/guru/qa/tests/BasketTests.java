@@ -30,7 +30,6 @@ public class BasketTests extends TestBase {
                 .openMenu()
                 .goToSection(sectionName);
         sectionPage
-                .getNameOfRandomItemCard(dataExtractor)
                 .getBrandOfRandomItemCard(dataExtractor)
                 .getPriceOfRandomItemCard(dataExtractor)
                 .getLinkOfRandomItemCard(dataExtractor)
@@ -52,7 +51,6 @@ public class BasketTests extends TestBase {
                 .openMenu()
                 .goToSection(sectionName);
         sectionPage
-                .getNameOfRandomItemCard(dataExtractor)
                 .getBrandOfRandomItemCard(dataExtractor)
                 .getPriceOfRandomItemCard(dataExtractor)
                 .getLinkOfRandomItemCard(dataExtractor)
