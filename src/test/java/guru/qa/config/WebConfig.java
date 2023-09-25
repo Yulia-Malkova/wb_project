@@ -13,7 +13,7 @@ import org.aeonbits.owner.Config;
         Browser getBrowser();
 
         @Key("browserVersion")
-        @DefaultValue("100.0")
+        @DefaultValue("116.0")
         String getBrowserVersion();
 
         @Config.Key("browserSize")
