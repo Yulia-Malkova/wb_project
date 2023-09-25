@@ -24,8 +24,8 @@
 - В качестве сборщика был использован - <code>Gradle</code>.
 - Использованы фреймворки <code>JUnit 5</code> и [Selenide](https://selenide.org/).
 - При прогоне тестов браузер запускается в [Selenoid](https://aerokube.com/selenoid/).
-- Для удаленного запуска реализована джоба в [Jenkins](https://jenkins.autotests.cloud/job/021-Yulia_Malkova-WB_project/) с формированием [Allure-отчета](https://jenkins.autotests.cloud/job/021-Yulia_Malkova-WB_project/13/allure/) и отправкой результатов в <code>Telegram</code> при помощи бота.
-- Осуществлена интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3682/dashboards) и [Jira](https://jira.autotests.cloud/browse/HOMEWORK-893).
+- Для удаленного запуска реализована джоба в Jenkins с формированием Allure-отчета и отправкой результатов в <code>Telegram</code> при помощи бота.
+- Осуществлена интеграция с <code>Allure TestOps </code> и <code>Jira</code>.
 
 Содержание Allure-отчета:
 * Шаги теста;
@@ -69,24 +69,26 @@ ${TEST_JOB}
 * <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По умолчанию - <code>100.0</code>.
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию - <code>1920x1080</code>.
 * <code>WEB_DRIVER</code> – адрес удаленного сервера, на котором будут запускаться тесты.
-ç Сборка в Jenkins
+
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Сборка в [Jenkins](https://jenkins.autotests.cloud/job/021-Yulia_Malkova-WB_project/)
 <p align="center">
 <img title="Jenkins Build" src="media/ jenkins.png">
 </p>
 
-## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Пример Allure-отчета
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Пример [Allure-отчета](https://jenkins.autotests.cloud/job/021-Yulia_Malkova-WB_project/13/allure/)
 ### Overview
 
 <p align="center">
 <img title="Allure Overview" src="media/allure-overview.png">
 </p>
+
 ### Результат выполнения теста
 
 <p align="center">
 <img title="Test Results in Alure" src="media/allure_test_result.png">
 </p>
 
-## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Интеграция с Allure TestOps
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3682/dashboards)
 
 Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>.
 Результат выполнения автотестов отображается в <code>Allure TestOps</code>
@@ -96,7 +98,7 @@ ${TEST_JOB}
 <img title="Allure TestOps DashBoard" src="media/allure_test_ops.png">
 </p>
 
-## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Интеграция с Jira
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-893)
 
 Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается информация, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
 
