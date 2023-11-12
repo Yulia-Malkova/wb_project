@@ -15,6 +15,4 @@ public class Variables {
     RandomEnumGenerator randomEnumGeneratorSection = new RandomEnumGenerator(Sections.class);
     Sections sections = (Sections) randomEnumGeneratorSection.randomEnum();
     public String randomSection = sections.getName();
-
-
 }
