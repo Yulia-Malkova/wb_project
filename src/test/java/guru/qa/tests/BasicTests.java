@@ -35,7 +35,6 @@ public class BasicTests extends TestBase {
     @DisplayName("Пользователь может открыть чат поддержки")
     @Test
     void userCanOpenSupportChat() {
-
         mainPage
                 .openSupportChat()
                 .checkSupportChatWindow();

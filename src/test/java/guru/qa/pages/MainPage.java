@@ -38,27 +38,24 @@ public class MainPage {
 
     @Step("Кликаем на строку поиска")
     public MainPage clickSearchBar() {
-
-        waitTillItemCardsLoad();
+        waitTillChatLoads();
         searchBar.click();
         return this;
     }
 
     @Step("Добавляем текст в строку поиска")
     public void fillInSearchInput(String searchInput) {
-
         searchBar.setValue(searchInput).pressEnter();
     }
-    @Step("Проверяем, что карточки товаров загрузились")
-    public MainPage waitTillItemCardsLoad(){
-
-        paginationButton.should(Condition.appear, Duration.ofSeconds(10));
+    @Step("Проверяем, что чат поддержки загрузился")
+    public MainPage waitTillChatLoads(){
+        supportIcon.should(Condition.appear, Duration.ofSeconds(10));
         return this;
     }
 
     @Step("Открываем чат поддержки")
     public MainPage openSupportChat() {
-
+        waitTillChatLoads();
         supportIcon.click();
         return this;
     }
@@ -75,8 +72,7 @@ public class MainPage {
 
     @Step("Открываем меню")
     public MainPage openMenu() {
-
-        waitTillItemCardsLoad();
+        waitTillChatLoads();
         menuButton.click();
         waitUntilMenuLoads();
         return this;
@@ -113,7 +109,6 @@ public class MainPage {
 
     @Step("Проверяем, что меню загрузилось")
     public MainPage waitUntilMenuLoads() {
-
         menuCloseButton.should(Condition.appear, Duration.ofSeconds(10));
         return this;
     }

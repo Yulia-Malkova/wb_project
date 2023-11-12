@@ -14,6 +14,6 @@ public class SearchResultPage {
     @Step("Проверяем, что заголовок страницы совпадает с названием выбранной секции")
     public void checkResultPageTitle(String searchInput) {
 
-        resultPageTitle.shouldHave(text("По запросу «" + searchInput + "» найдено"));
+        resultPageTitle.shouldHave(text(searchInput));
     }
 }

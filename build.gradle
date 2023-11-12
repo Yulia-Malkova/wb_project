@@ -1,14 +1,22 @@
 plugins {
     id 'java-library'
     id 'io.qameta.allure' version '2.11.2'
+    id "io.freefair.lombok" version "8.3"
 }
 
 repositories {
     mavenCentral()
 }
 
-group 'com.demoqa'
+group 'guru.qa'
 version '1.0'
+
+def selenideVersion = "6.17.1",
+    allureVersion = "2.24.0",
+    junitVersion = "5.9.3",
+    ownerVersion = "1.0.4",
+    fakerVersion ="1.0.2"
+
 
 allure {
     report {
@@ -29,11 +37,11 @@ tasks.withType(Test) {
 
 dependencies {
     testImplementation(
-            'com.codeborne:selenide:6.17.1',
-            'com.github.javafaker:javafaker:1.0.2',
-            'org.junit.jupiter:junit-jupiter:5.9.3',
-            'io.qameta.allure:allure-selenide:2.23.0',
-            'org.aeonbits.owner:owner:1.0.4',
+            "com.codeborne:selenide:$selenideVersion",
+            "com.github.javafaker:javafaker:$fakerVersion",
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "org.aeonbits.owner:owner:$ownerVersion"
     )
 }
 
