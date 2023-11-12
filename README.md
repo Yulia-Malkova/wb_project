@@ -6,18 +6,18 @@
 
 ## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Использованный стек технологий
 <p align="center">
-<img width="6%" title="IntelliJ IDEA" src="media/Intelij_IDEA.svg">
-<img width="6%" title="Java" src="media/Java.svg">
-<img width="6%" title="Selenide" src="media/Selenide.svg">
-<img width="6%" title="Selenoid" src="media/Selenoid.svg">
-<img width="6%" title="Allure Report" src="media/Allure_Report.svg">
-<img width="5%" title="Allure TestOps" src="media/AllureTestOps.svg">
-<img width="6%" title="Gradle" src="media/Gradle.svg">
-<img width="6%" title="JUnit5" src="media/JUnit5.svg">
-<img width="6%" title="GitHub" src="media/GitHub.svg">
-<img width="6%" title="Jenkins" src="media/Jenkins.svg">
-<img width="6%" title="Telegram" src="media/Telegram.svg">
-<img width="5%" title="Jira" src="media/Jira.svg">
+<a href="https://www.jetbrains.com/idea/"><img width="6%" title="IntelliJ IDEA" src="media/Intelij_IDEA.svg">
+<a href="https://www.java.com/"><img width="6%" title="Java" src="media/Java.svg">
+<a href="https://selenide.org/"><img width="6%" title="Selenide" src="media/Selenide.svg">
+<a href="https://aerokube.com/selenoid/latest/"><img width="6%" title="Selenoid" src="media/Selenoid.svg">
+<a href="https://github.com/allure-framework"><img width="6%" title="Allure Report" src="media/Allure_Report.svg">
+<a href="https://qameta.io/"><img width="5%" title="Allure TestOps" src="media/AllureTestOps.svg">
+<a href="https://gradle.org/"><img width="6%" title="Gradle" src="media/Gradle.svg">
+<a href="https://junit.org/junit5/"><img width="6%" title="JUnit5" src="media/JUnit5.svg">
+<a href="https://github.com/"><img width="6%" title="GitHub" src="media/GitHub.svg">
+<a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/Jenkins.svg">
+<a href="https://web.telegram.org/"><img width="6%" title="Telegram" src="media/Telegram.svg">
+<a href="https://www.atlassian.com/software/jira/"><img width="5%" title="Jira" src="media/Jira.svg">
 </p>
 
 - В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка для тестирования Selenide.
@@ -75,7 +75,7 @@ ${TEST_JOB}
 <img title="Jenkins Build" src="media/ jenkins.png">
 </p>
 
-## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Пример [Allure-отчета](https://jenkins.autotests.cloud/job/021-Yulia_Malkova-WB_project/13/allure/)
+## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Пример [Allure-отчета](https://jenkins.autotests.cloud/job/021-Yulia_Malkova-WB_project/allure/)
 ### Overview
 
 <p align="center">
