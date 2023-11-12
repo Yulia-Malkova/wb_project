@@ -5,6 +5,8 @@ import guru.qa.pages.ItemPage;
 import guru.qa.pages.MainPage;
 import guru.qa.pages.SectionPage;
 import guru.qa.utils.DataExtractor;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -24,6 +26,8 @@ public class BasketTests extends TestBase {
     @ValueSource(
             strings = {"Дом", "Книги", "Игрушки", "Зоотовары", "Бытовая техника"})
     @Tag("basket")
+    @Feature("Корзина")
+    @Owner("jmalkova")
     void userCanAddItemToBasket(String sectionName) {
 
         mainPage
@@ -45,6 +49,8 @@ public class BasketTests extends TestBase {
     @ValueSource(
             strings = {"Дом", "Книги", "Игрушки", "Зоотовары", "Бытовая техника"})
     @Tag("basket")
+    @Feature("Корзина")
+    @Owner("jmalkova")
     void userCanDeleteItemFromBasket(String sectionName) {
 
         mainPage

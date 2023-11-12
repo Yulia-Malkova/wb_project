@@ -7,6 +7,8 @@ import guru.qa.pages.SearchResultPage;
 import guru.qa.pages.SectionPage;
 import guru.qa.utils.DataExtractor;
 import guru.qa.utils.Variables;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -23,6 +25,8 @@ public class BasicTests extends TestBase {
 
     @DisplayName("Пользователь может найти товары через строку поиска")
     @Test()
+    @Feature("Поиск")
+    @Owner("jmalkova")
     void userCanFindItemsUsingSearchField() {
 
         mainPage
@@ -34,6 +38,8 @@ public class BasicTests extends TestBase {
 
     @DisplayName("Пользователь может открыть чат поддержки")
     @Test
+    @Feature("Чат поддержки")
+    @Owner("jmalkova")
     void userCanOpenSupportChat() {
         mainPage
                 .openSupportChat()
@@ -42,6 +48,8 @@ public class BasicTests extends TestBase {
 
     @ParameterizedTest(name = "Пользователь может поменять валюту на {0}")
     @EnumSource(Currency.class)
+    @Feature("Смена валюты")
+    @Owner("jmalkova")
     void userCanChangeCurrency(Currency c) {
 
         mainPage
@@ -54,6 +62,8 @@ public class BasicTests extends TestBase {
 
     @DisplayName("Пользователь может открыть страницу товара")
     @Test
+    @Feature("Карточка товара")
+    @Owner("jmalkova")
     void userCanOpenItemCard() {
 
         mainPage
