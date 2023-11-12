@@ -95,7 +95,7 @@ ${TEST_JOB}
 На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
 
 <p align="center">
-<img title="Allure TestOps DashBoard" src="media/allure_test_ops.png">
+<img title="Allure TestOps DashBoard" src="media/test-ops.png">
 </p>
 
 ## ![##BC13A2](https://placehold.co/15x15/BC13A2/BC13A2.png) Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-893)
