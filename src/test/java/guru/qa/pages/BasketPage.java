@@ -13,7 +13,7 @@ public class BasketPage {
             itemCounter = $(".navbar-pc__notify"),
             itemBrandInBasket = $(".good-info__good-brand "),
             itemPriceInBasket = $(".b-right"),
-            itemSectionInBasket = $(".basket-section__basket-list.basket-list"),
+            itemSectionInBasket = $(".basket-section__basket-list"),
             deleteButton = $(".btn__del"),
             emptyBasketMessage = $(".basket-page__basket-empty");
 

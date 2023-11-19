@@ -30,7 +30,7 @@ public class CatalogTests extends TestBase {
     }
 
     @ParameterizedTest(name = "Раздел каталога {0} содержит подраздел {1}")
-    @CsvFileSource(resources = "/userCanOpenItemCardInCatalogSection.csv")
+    @CsvFileSource(resources = "/catalogSection.csv")
     @Tag("catalog")
     @Feature("Каталог")
     @Owner("jmalkova")

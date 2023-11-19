@@ -16,8 +16,7 @@ public class ItemPage {
     private SelenideElement
 
             itemHeader = $(".product-page__header-wrap"),
-            brandInfo = $("[data-link='text{:selectedNomenclature^brandName}']"),
-            priceBlock = $(".product-page__price-block.product-page__price-block--aside"),
+            priceBlock = $(".product-page__price-block--aside"),
             basketButton = $(".product-page__aside-sticky"),
             deliveryInformationInfo = $(".product-page__aside-sticky").$(".delivery__store");
 

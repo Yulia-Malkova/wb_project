@@ -21,13 +21,12 @@ public class MainPage {
             currencyDropdown = $(".simple-menu__currency"),
             currencyIcon = $(".simple-menu__currency"),
             searchBar = $("#searchInput"),
-            supportIcon = $(".smm-fixed__toggle[aria-label='Онлайн чат']"),
+            supportIcon = $(".smm-fixed__toggle"),
             supportChatWindow = $(".chat__content-wrap"),
             supportDialogueName = $(".chat__text"),
             supportChatBody = $(".chat__message-none"),
             supportChatInput = $(".chat__inputs-wrap"),
-            menuCloseButton = $(".menu-burger__close"),
-            paginationButton = $(".j-main-banners-pagination");
+            menuCloseButton = $(".menu-burger__close");
 
 
     private ElementsCollection

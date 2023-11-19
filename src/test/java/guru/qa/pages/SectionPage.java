@@ -19,7 +19,6 @@ public class SectionPage {
     goodsCounter =$(".goods-count"),
     randomItemCard = $$(".product-card__wrapper").get(variables.itemCardNumber),
     itemPriceElement = randomItemCard.$(".price__lower-price"),
-    itemNameElement = randomItemCard.$(".product-card__name"),
     itemBrandElement = randomItemCard.$(".product-card__brand"),
     itemLinkElement = randomItemCard.$(".product-card__link");
 
